@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>VatCalc 0537819570</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>VatCalc 0537819570</h2>
+
+<div class="container">
+
+<div class="card">
+<label>المبيعات شامل الضريبة</label>
+<input id="sales">
+
+<label>مرتجعات المبيعات</label>
+<input id="salesRet">
+
+<label>نوع الإدخال</label>
+<select id="mode" onchange="toggleFields()">
+<option value="purchases">مشتريات</option>
+<option value="target">ضريبة مستهدفة</option>
+</select>
+
+<label id="mainLabel">المشتريات شامل الضريبة</label>
+<input id="mainInput">
+
+<div id="purchaseReturnBox">
+<label>مرتجعات المشتريات</label>
+<input id="purRet">
+</div>
+
+<button onclick="calc()">احسب</button>
+</div>
+
+<div class="card">
+<div id="net">-</div>
+</div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
