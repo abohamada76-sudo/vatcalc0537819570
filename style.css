@@ -1,29 +1,101 @@
 body{
-  font-family: Arial;
+  font-family: 'Segoe UI', Arial;
   background:#f4f6f9;
-  padding:20px;
+  padding:30px;
 }
 
+/* Watermark */
+body::before{
+  content:"0537819570";
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:150px;
+  color:rgba(0,0,0,0.02);
+  pointer-events:none;
+}
+
+/* Layout */
 .container{
   display:grid;
-  grid-template-columns:300px 1fr;
-  gap:20px;
+  grid-template-columns: 350px 1fr;
+  gap:30px;
 }
 
 .card{
   background:#fff;
   padding:20px;
-  border-radius:10px;
+  border-radius:12px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
-input,select,button{
+/* Inputs */
+label{
+  font-size:13px;
+  color:#666;
+}
+
+input,select{
   width:100%;
-  margin:8px 0;
-  padding:8px;
+  padding:10px;
+  margin:6px 0 12px;
+  border-radius:8px;
+  border:1px solid #ddd;
 }
 
 button{
+  width:100%;
+  padding:12px;
   background:#2c7be5;
   color:#fff;
   border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* Results */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.col{
+  padding:15px;
+  border-radius:10px;
+}
+
+.sales{
+  background:#eef5ff;
+}
+
+.purchase{
+  background:#eefaf0;
+  border-right:4px solid #ddd;
+}
+
+.metric{
+  background:#fff;
+  padding:10px;
+  border-radius:8px;
+  margin-bottom:10px;
+}
+
+.metric p{
+  font-weight:bold;
+  font-size:16px;
+}
+
+.highlight{
+  background:#e8f3ff;
+  border:1px solid #2c7be5;
+  margin-top:15px;
+}
+
+.note{
+  margin-bottom:20px;
+  padding:10px;
+  background:#fff3cd;
+  border-radius:8px;
 }
