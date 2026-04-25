@@ -2,22 +2,28 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>VatCalc 0537819570</title>
+<title>VatCalc</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h2>VatCalc 0537819570</h2>
+<h2>VatCalc حاسبة الضريبة 2026 </h2>
+
+<div class="note">
+للتواصل لرفع الضريبة بمبلغ 300 ريال يرجى التواصل على الرقم 0537819570
+</div>
 
 <div class="container">
 
+<!-- الإدخال -->
 <div class="card">
-<label>المبيعات شامل الضريبة</label>
-<input id="sales">
+
+<label>المبيعات (شامل الضريبة)</label>
+<input id="sales" placeholder="مثال: 1150">
 
 <label>مرتجعات المبيعات</label>
-<input id="salesRet">
+<input id="salesRet" placeholder="مثال: 150">
 
 <label>نوع الإدخال</label>
 <select id="mode" onchange="toggleFields()">
@@ -25,19 +31,54 @@
 <option value="target">ضريبة مستهدفة</option>
 </select>
 
-<label id="mainLabel">المشتريات شامل الضريبة</label>
-<input id="mainInput">
+<label id="mainLabel">المشتريات (شامل الضريبة)</label>
+<input id="mainInput" placeholder="مثال: 500">
 
 <div id="purchaseReturnBox">
 <label>مرتجعات المشتريات</label>
-<input id="purRet">
+<input id="purRet" placeholder="مثال: 50">
 </div>
 
 <button onclick="calc()">احسب</button>
+
 </div>
 
+<!-- النتائج -->
 <div class="card">
-<div id="net">-</div>
+
+<div class="grid">
+
+<!-- المبيعات -->
+<div class="col sales">
+<h1>المبيعات</h1>
+
+<div class="metric"><p id="s1">-</p><small>الإجمالي</small></div>
+<div class="metric"><p id="s2">-</p><small>المرتجعات</small></div>
+<div class="metric"><p id="s3">-</p><small>الصافي ش.ضريبة</small></div>
+<div class="metric"><p id="s4">-</p><small>قبل الضريبة</small></div>
+<div class="metric"><p id="s5">-</p><small>ضريبة المبيعات</small></div>
+
+</div>
+
+<!-- المشتريات -->
+<div class="col purchase">
+<h1>المشتريات</h1>
+
+<div class="metric"><p id="p1">-</p><small>الإجمالي</small></div>
+<div class="metric"><p id="p2">-</p><small>المرتجعات</small></div>
+<div class="metric"><p id="p3">-</p><small>الصافي ش.ضريبة</small></div>
+<div class="metric"><p id="p4">-</p><small>قبل الضريبة</small></div>
+<div class="metric"><p id="p5">-</p><small>ضريبة المشتريات</small></div>
+
+</div>
+
+</div>
+
+<div class="metric highlight">
+<p id="net">-</p>
+<h2>صافي الضريبة المستحقة</h2>
+</div>
+
 </div>
 
 </div>
